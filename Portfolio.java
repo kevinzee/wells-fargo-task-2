@@ -21,13 +21,10 @@ public class Portfolio {
     private String lastName;
 
     @Column(nullable = false)
-    private String address;
+    private String riskFactor;
 
     @Column(nullable = false)
-    private String phone;
-
-    @Column(nullable = false)
-    private String email;
+    private String creationDate;
 
     @ManyToOne()
     @JoinColumn(nullable = false, name = "clientId")
@@ -37,12 +34,13 @@ public class Portfolio {
 
     }
 
-    public Portfolio(String firstName, String lastName, String address, String phone, String email) {
+    public Portfolio(String firstName, String lastName, String riskFactor,
+            String creationDate) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.address = address;
-        this.phone = phone;
-        this.email = email;
+        this.riskFactor = riskFactor;
+        this.creationDate = creationDate;
+
     }
 
     public Long getPortfolioId() {
@@ -65,28 +63,20 @@ public class Portfolio {
         this.lastName = lastName;
     }
 
-    public String getAddress() {
-        return address;
+    public String getRiskFactor() {
+        return riskFactor;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setRiskFactor(String riskFactor) {
+        this.riskFactor = riskFactor;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getCreationDate() {
+        return creationDate;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+    public void setCreationDate(String creationDate) {
+        this.creationDate = creationDate;
     }
 
     public Client getClient() {
