@@ -21,13 +21,16 @@ public class Security {
     private String lastName;
 
     @Column(nullable = false)
-    private String address;
+    private String category;
 
     @Column(nullable = false)
-    private String phone;
+    private double purchasePrice;
 
     @Column(nullable = false)
-    private String email;
+    private String purchaseDate;
+
+    @Column(nullable = false)
+    private long quantity;
 
     @ManyToOne()
     @JoinColumn(nullable = false, name = "portfolioId")
@@ -37,12 +40,14 @@ public class Security {
 
     }
 
-    public Security(String firstName, String lastName, String address, String phone, String email) {
+    public Security(String firstName, String lastName, String category, double purchasePrice, String purchaseDate,
+            long quantity) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.address = address;
-        this.phone = phone;
-        this.email = email;
+        this.category = category;
+        this.purchasePrice = purchasePrice;
+        this.purchaseDate = purchaseDate;
+        this.quantity = quantity;
     }
 
     public Long getSecurityId() {
@@ -65,28 +70,36 @@ public class Security {
         this.lastName = lastName;
     }
 
-    public String getAddress() {
-        return address;
+    public String getCategory() {
+        return category;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
-    public String getPhone() {
-        return phone;
+    public double getPurchasePrice() {
+        return purchasePrice;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setPurchasePrice(double purchasePrice) {
+        this.purchasePrice = purchasePrice;
     }
 
-    public String getEmail() {
-        return email;
+    public String getPurchaseDate() {
+        return purchaseDate;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setPurchaseDate(String purchaseDate) {
+        this.purchaseDate = purchaseDate;
+    }
+
+    public long getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(long quantity) {
+        this.quantity = quantity;
     }
 
     public Portfolio gePortfolio() {
