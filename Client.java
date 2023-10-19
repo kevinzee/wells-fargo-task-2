@@ -30,7 +30,7 @@ public class Client {
     private String email;
 
     @ManyToOne()
-    @JoinColumn(nullable = false, name = "advisoroId")
+    @JoinColumn(nullable = false, name = "advisorId")
     private Advisor advisor;
 
     protected Client() {
